@@ -1,0 +1,31 @@
+server:
+  port: 8090
+  jsp-servlet: 
+    init-parameters: 
+      development: true #jsp auto recompile
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8
+#    url: jdbc:mysql://192.168.1.104:3306/dc_framework_report?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: test
+    password: 123
+    dbcp2:
+      validation-query: SELECT 1
+      test-while-idle: true
+  application:
+    name: my
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/jsp/
+#      suffix: .jsp
+
